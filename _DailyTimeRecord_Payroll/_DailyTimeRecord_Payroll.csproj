@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A7694D17-D9C2-48F9-8E71-7159179B512C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>_DailyTimeRecord_Payroll</RootNamespace>
+    <AssemblyName>_DailyTimeRecord_Payroll</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>_DailyTimeRecord_Payroll.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\DLL\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\DLL\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow">
+      <HintPath>..\DLL\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=10.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL" />
+    <Reference Include="DPCtlUruNet, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\U.are.U SDK\Windows\Lib\.NET\DPCtlUruNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DPCtlXUru, Version=1.0.0.1, Culture=neutral, PublicKeyToken=7f32ef930fec5e5f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files\DigitalPersona\U.are.U SDK\Windows\Lib\.NET\DPCtlXUru.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPDevNET">
+      <HintPath>..\..\dll\DPFPDevNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPEngNET">
+      <HintPath>..\..\dll\DPFPEngNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPGuiNET">
+      <HintPath>..\..\dll\DPFPGuiNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPShrNET">
+      <HintPath>..\..\dll\DPFPShrNET.dll</HintPath>
+    </Reference>
+    <Reference Include="DPFPVerNET">
+      <HintPath>..\..\dll\DPFPVerNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboardForm.Designer.cs">
+      <DependentUpon>AdminDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboardTwo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboardTwo.Designer.cs">
+      <DependentUpon>AdminDashboardTwo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\EmployeeRepository.cs" />
+    <Compile Include="DataAccess\IEmployeeRepository.cs" />
+    <Compile Include="EmployeeDashboardForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmployeeDashboardForm.Designer.cs">
+      <DependentUpon>EmployeeDashboardForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="globalnames.cs" />
+    <Compile Include="Helpers.cs" />
+    <Compile Include="LoginForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm1.Designer.cs">
+      <DependentUpon>LoginForm1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\EmployeeCRUD.cs" />
+    <Compile Include="Models\EmployeeList.cs" />
+    <Compile Include="Models\Payroll.cs" />
+    <Compile Include="Models\TimeInOut.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UC Forms\AddEmployee_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC Forms\AddEmployee_UC.Designer.cs">
+      <DependentUpon>AddEmployee_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC Forms\AttendanceReport_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC Forms\AttendanceReport_UC.Designer.cs">
+      <DependentUpon>AttendanceReport_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC Forms\AdminDashboard_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC Forms\AdminDashboard_UC.Designer.cs">
+      <DependentUpon>AdminDashboard_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC Forms\CaptureCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC Forms\CaptureCam.Designer.cs">
+      <DependentUpon>CaptureCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC Forms\DailyInOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC Forms\DailyInOut.Designer.cs">
+      <DependentUpon>DailyInOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC Forms\EmployeeList_UC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC Forms\EmployeeList_UC.Designer.cs">
+      <DependentUpon>EmployeeList_UC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC Forms\CaptureFingerPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC Forms\CaptureFingerPrint.Designer.cs">
+      <DependentUpon>CaptureFingerPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UC Forms\EnrollFingerPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UC Forms\EnrollFingerPrint.Designer.cs">
+      <DependentUpon>EnrollFingerPrint.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminDashboardForm.resx">
+      <DependentUpon>AdminDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDashboardTwo.resx">
+      <DependentUpon>AdminDashboardTwo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeDashboardForm.resx">
+      <DependentUpon>EmployeeDashboardForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm1.resx">
+      <DependentUpon>LoginForm1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UC Forms\AddEmployee_UC.resx">
+      <DependentUpon>AddEmployee_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC Forms\AttendanceReport_UC.resx">
+      <DependentUpon>AttendanceReport_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC Forms\AdminDashboard_UC.resx">
+      <DependentUpon>AdminDashboard_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC Forms\CaptureCam.resx">
+      <DependentUpon>CaptureCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC Forms\DailyInOut.resx">
+      <DependentUpon>DailyInOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC Forms\EmployeeList_UC.resx">
+      <DependentUpon>EmployeeList_UC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UC Forms\CaptureFingerPrint.resx">
+      <DependentUpon>CaptureFingerPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PrintForms\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
